@@ -41,7 +41,7 @@ client.on('message', async message => {
 		if (command === 'guildlist' && message.author.id === ownerID) {
 			let list = []
 			client.guilds.cache.forEach(g => {
-				list.push(g.name)
+				list.push(g.name + '\n')
 			});
 			message.channel.send(list)
 		}

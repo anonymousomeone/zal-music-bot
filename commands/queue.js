@@ -1,4 +1,3 @@
-const Discord = require('discord.js');
 module.exports = {
 	name: 'queue',
 	description: 'shows the queue',
@@ -11,7 +10,11 @@ module.exports = {
         });
         let string = ''
         for (var i = 0; i < songs.length; i++) {
+            if (i == 0){
+                string += ('>>' + `: ${songs[i].title}\n`);
+            } else {
             string += (' ' + i + `: ${songs[i].title}\n`);
+            }
         }
 
         message.channel.send('music queue:\n```' + string + '```')
